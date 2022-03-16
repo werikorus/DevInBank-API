@@ -18,8 +18,8 @@ namespace DevInBank_API.Controllers
         {
             List<Contas> contas = new List<Contas>();
 
-            Contas c1 = new ("Werik Filipe dos Santos Cunha", "022.381.581-03", "Florianóplis-SC", 4645.85, 546549, AgenciasEnum.Florianopolis);
-            Contas c2 = new ("Ester Carvalho de Alencar", "021.313.123-01", "Florianóplis-SC", 4645.85, 546549, AgenciasEnum.Biguacu);
+            Contas c1 = new ("Werik Filipe dos Santos Cunha", "022.381.581-03", "Florianóplis-SC", 4645.85,  AgenciasEnum.Florianopolis, 4545.22);
+            Contas c2 = new ("Ester Carvalho de Alencar", "021.313.123-01", "Florianóplis-SC", 4645.85,  AgenciasEnum.Biguacu, 6578.56);
 
             contas.Add(c1);
             contas.Add(c2);

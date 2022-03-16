@@ -5,7 +5,16 @@ using System.Threading.Tasks;
 
 namespace DevInBank_API.src.Entities
 {
-    public class ContaPoupanca
+    public class ContaPoupanca : Contas
     {
+        public override string Extrato()
+        {
+            return "Extrato Conta Poupança";
+        }
+
+        public string SimularRentabilidade(int TempoEmMeses, double ValorMensal)
+        {
+            return ""; 
+        }
     }
 }

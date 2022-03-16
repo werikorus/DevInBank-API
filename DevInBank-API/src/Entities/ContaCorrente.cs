@@ -5,7 +5,11 @@ using System.Threading.Tasks;
 
 namespace DevInBank_API.src.Entities
 {
-    public class ContaCorrente
+    public class ContaCorrente : Contas
     {
+        public override string Extrato()
+        {
+            return "Extrato Conta Corrente";
+        }
     }
 }
