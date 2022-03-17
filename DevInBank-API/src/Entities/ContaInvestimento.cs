@@ -8,11 +8,19 @@ namespace DevInBank_API.src.Entities
 {
     public class ContaInvestimento : Contas
     {
+
         public TipoInvestimentoEnum TipoInvestimento { get; set; }
 
-        public ContaInvestimento(TipoInvestimentoEnum tipoInvestimento)
+
+        public ContaInvestimento(string nome, string cPF, string endereco, double rendaMensal, AgenciasEnum agencia, double saldo, TipoInvestimentoEnum tipoInvestimento)
+            : base(nome, cPF, endereco, rendaMensal, agencia, saldo)
         {
             TipoInvestimento = tipoInvestimento;
+        }
+
+        public ContaInvestimento()
+        {
+
         }
 
         public override string Extrato()
@@ -21,7 +29,7 @@ namespace DevInBank_API.src.Entities
         }
 
 
-        public string SimularInvestimento(TipoInvestimentoEnum tipoInvestimento, double Valor)
+        public string SimularInvestimento(TipoInvestimentoEnum tipoInvestimento, int tempoEmMeses, double Valor)
         {
             double PorcentagemAoAno = 0;
 
@@ -37,13 +45,14 @@ namespace DevInBank_API.src.Entities
 
                 case TipoInvestimentoEnum.CDB:
                     PorcentagemAoAno = 0.1;
-                    break;             
+                    break;
             };
 
             double rendimentoAnual = Valor * PorcentagemAoAno;
 
             string msg = $"Valor aplicado:  {Valor}\n" +
                          $"Tipo de investimento: {tipoInvestimento}\n ({PorcentagemAoAno}% ao ano)" +
+                         $"Rendimento mensal: {rendimentoAnual / 12}" +
                          $"Rendimento anual: {rendimentoAnual}\n";
 
 

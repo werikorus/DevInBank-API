@@ -22,7 +22,6 @@ namespace DevInBank_API.src.Entities
             var random = new Random();
             var account = random.Next(1, 1000);
 
-
             Nome = nome;
             CPF = cPF;
             Endereco = endereco;
@@ -66,6 +65,7 @@ namespace DevInBank_API.src.Entities
         {
 
         }
+
 
     }
 }
