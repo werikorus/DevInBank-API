@@ -15,6 +15,7 @@ namespace DevInBank_API.src.Entities
         public double RendaMensal { get; set; }
         public string Conta { get; private set; }
         public AgenciasEnum Agencia { get; set; }
+        public  TipoContaEnum  TipoConta { get; set; }
         public double Saldo { get; set; }
 
         public Contas(string nome, string cPF, string endereco, double rendaMensal, AgenciasEnum agencia, double saldo)
@@ -25,7 +26,7 @@ namespace DevInBank_API.src.Entities
             Nome = nome;
             CPF = cPF;
             Endereco = endereco;
-            RendaMensal = rendaMensal;            
+            RendaMensal = rendaMensal;          
             Agencia = agencia;
             Conta = $"{account}-00{agencia}";
             Saldo = saldo;
@@ -33,6 +34,7 @@ namespace DevInBank_API.src.Entities
 
         public Contas()
         {
+
         }
 
         public void Saque(double valor)
@@ -65,7 +67,5 @@ namespace DevInBank_API.src.Entities
         {
 
         }
-
-
     }
 }

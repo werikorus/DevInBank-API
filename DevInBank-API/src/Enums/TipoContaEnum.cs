@@ -8,8 +8,8 @@ namespace DevInBank_API.src.Enums
 {
     public enum TipoContaEnum 
     {
-        Corrente = 1,
-        Poupanca = 2,
-        Investimento = 3
+        ContaPoupanca = 1,
+        ContaCorrente = 2,
+        ContaInvestimento = 3
     }
 }

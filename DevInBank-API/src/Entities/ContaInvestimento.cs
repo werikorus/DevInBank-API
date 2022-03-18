@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using DevInBank_API.src.Enums;
+﻿using DevInBank_API.src.Enums;
 
 namespace DevInBank_API.src.Entities
 {
@@ -13,9 +9,10 @@ namespace DevInBank_API.src.Entities
 
 
         public ContaInvestimento(string nome, string cPF, string endereco, double rendaMensal, AgenciasEnum agencia, double saldo, TipoInvestimentoEnum tipoInvestimento)
-            : base(nome, cPF, endereco, rendaMensal, agencia, saldo)
+            :base(nome, cPF, endereco, rendaMensal, agencia, saldo)
         {
             TipoInvestimento = tipoInvestimento;
+            TipoConta = TipoContaEnum.ContaInvestimento;
         }
 
         public ContaInvestimento()
@@ -89,7 +86,6 @@ namespace DevInBank_API.src.Entities
                     PorcentagemAoAno = 0.1;
                     break;
             };
-
 
             return $"O Investimento foi feito com sussesso e já está rendendo {PorcentagemAoAno}$ ao ano.";
         }
