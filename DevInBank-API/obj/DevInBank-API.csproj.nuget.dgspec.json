@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Projetos\\C#\\DevInBank-API\\DevInBank-API\\DevInBank-API.csproj": {}
+    "c:\\Projetos\\C#\\DevInBank-API\\DevInBank-API\\DevInBank-API.csproj": {}
   },
   "projects": {
-    "C:\\Projetos\\C#\\DevInBank-API\\DevInBank-API\\DevInBank-API.csproj": {
+    "c:\\Projetos\\C#\\DevInBank-API\\DevInBank-API\\DevInBank-API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projetos\\C#\\DevInBank-API\\DevInBank-API\\DevInBank-API.csproj",
+        "projectUniqueName": "c:\\Projetos\\C#\\DevInBank-API\\DevInBank-API\\DevInBank-API.csproj",
         "projectName": "DevInBank-API",
-        "projectPath": "C:\\Projetos\\C#\\DevInBank-API\\DevInBank-API\\DevInBank-API.csproj",
+        "projectPath": "c:\\Projetos\\C#\\DevInBank-API\\DevInBank-API\\DevInBank-API.csproj",
         "packagesPath": "C:\\Users\\werik\\.nuget\\packages\\",
-        "outputPath": "C:\\Projetos\\C#\\DevInBank-API\\DevInBank-API\\obj\\",
+        "outputPath": "c:\\Projetos\\C#\\DevInBank-API\\DevInBank-API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

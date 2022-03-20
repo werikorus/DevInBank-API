@@ -1,7 +1,8 @@
 ﻿using System;
-using DevInBank_API.src.Enums;
+using SoftBank_console.src.Enums;
 
-namespace DevInBank_API.src.Entities
+
+namespace SoftBank_console.src.Entities
 {
     public class Contas
     {
@@ -11,7 +12,7 @@ namespace DevInBank_API.src.Entities
         public double RendaMensal { get; set; }
         public string Conta { get; private set; }
         public AgenciasEnum Agencia { get; set; }
-        public  TipoContaEnum  TipoConta { get; set; }
+        public  TipoContaEnum  TipoConta { get; private set; }
         public double Saldo { get; set; }
 
         public Contas(string nome, string cPF, string endereco, double rendaMensal, AgenciasEnum agencia, double saldo)

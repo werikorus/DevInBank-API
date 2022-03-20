@@ -1,12 +1,12 @@
 ﻿using System;
 
-namespace DevInBankConsole
+namespace DevInBank_console
 {
     class Program
     {
         static void Main(string[] args)
         {
-            
+            Console.WriteLine("Hello World!");
         }
     }
 }
