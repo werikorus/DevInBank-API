@@ -1,30 +1,33 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace SoftBank_api.Controllers
 {
-    public class HistoricoController : Controller
+    public class RelatoriosController : Controller
     {
-        // GET: HistoricoController
+        // GET: RelatoriosController
         public ActionResult Index()
         {
             return View();
         }
 
-        // GET: HistoricoController/Details/5
+        // GET: RelatoriosController/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: HistoricoController/Create
+        // GET: RelatoriosController/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: HistoricoController/Create
+        // POST: RelatoriosController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(IFormCollection collection)
@@ -39,13 +42,13 @@ namespace SoftBank_api.Controllers
             }
         }
 
-        // GET: HistoricoController/Edit/5
+        // GET: RelatoriosController/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: HistoricoController/Edit/5
+        // POST: RelatoriosController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, IFormCollection collection)
@@ -60,13 +63,13 @@ namespace SoftBank_api.Controllers
             }
         }
 
-        // GET: HistoricoController/Delete/5
+        // GET: RelatoriosController/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: HistoricoController/Delete/5
+        // POST: RelatoriosController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id, IFormCollection collection)

@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SoftBank_console.src.Entities;
+using SoftBank_console.src.Mocks;
 using System.Collections.Generic;
-using DevInBank_API.src.Entities;
-using DevInBank_API.src.Mocks;
 
-namespace DevInBank_API.Controllers
+namespace SoftBank_api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -11,10 +11,27 @@ namespace DevInBank_API.Controllers
     {
         [HttpGet]
         public List<Contas> GetContas()
-        {
+        { 
             List<Contas> AllAccounts = ContasMock.GetAllContas();
             return AllAccounts;
         }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public string Depositar(int conta)
+        {
+            try
+            {
+                return "Editado com sucesso";
+            }
+            catch
+            {
+                throw new("Erro ao depositar!");
+            }
+        }
+
+
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -36,5 +53,6 @@ namespace DevInBank_API.Controllers
         {
             return "Deletado com sucesso";
         }
+
     } 
 }

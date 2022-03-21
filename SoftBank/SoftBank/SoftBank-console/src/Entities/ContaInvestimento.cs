@@ -1,18 +1,17 @@
 ﻿using SoftBank_console.src.Enums;
+using SoftBank_console.src.Services;
 
 namespace SoftBank_console.src.Entities
 {
     public class ContaInvestimento : Contas
     {
-
         public TipoInvestimentoEnum TipoInvestimento { get; set; }
-
 
         public ContaInvestimento(string nome, string cPF, string endereco, double rendaMensal, AgenciasEnum agencia, double saldo, TipoInvestimentoEnum tipoInvestimento)
             :base(nome, cPF, endereco, rendaMensal, agencia, saldo)
         {
-            TipoInvestimento = tipoInvestimento;
             TipoConta = TipoContaEnum.ContaInvestimento;
+            TipoInvestimento = tipoInvestimento;
         }
 
         public ContaInvestimento()
@@ -22,9 +21,13 @@ namespace SoftBank_console.src.Entities
 
         public override string Extrato()
         {
+            Transacoes <ContaInvestimento> transacao = new(this);
+            transacao.GetAllMovimentation();
+
+            //finalizar depois 
+
             return "Extrato Conta Investimento";
         }
-
 
         public string SimularInvestimento(TipoInvestimentoEnum tipoInvestimento, int tempoEmMeses, double Valor)
         {
@@ -45,31 +48,18 @@ namespace SoftBank_console.src.Entities
                     break;
             };
 
-            double rendimentoAnual = Valor * PorcentagemAoAno;
+            double rendimentoAnual = (Valor * 12) + (Valor * PorcentagemAoAno);
 
             string msg = $"Valor aplicado:  {Valor}\n" +
                          $"Tipo de investimento: {tipoInvestimento}\n ({PorcentagemAoAno}% ao ano)" +
                          $"Rendimento mensal: {rendimentoAnual / 12}" +
                          $"Rendimento anual: {rendimentoAnual}\n";
 
-
             return msg;
-
-            bool aplicar = false;
-
-            if (aplicar)
-            {
-                AplicarInvestimento(tipoInvestimento, Valor);
-            }
-            else
-            {
-                return default;
-            }
         }
 
-        public string AplicarInvestimento(TipoInvestimentoEnum tipoInvestimento, double Valor)
+        public string AplicarInvestimento(TipoInvestimentoEnum tipoInvestimento, int tempoEmMeses, double Valor)
         {
-
             double PorcentagemAoAno = 0;
 
             switch (tipoInvestimento)
@@ -87,7 +77,7 @@ namespace SoftBank_console.src.Entities
                     break;
             };
 
-            return $"O Investimento foi feito com sussesso e já está rendendo {PorcentagemAoAno}$ ao ano.";
+            return $"O Investimento foi feito com sussesso e já está rendendo {PorcentagemAoAno}% ao ano.";
         }
 
     }
